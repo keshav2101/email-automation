@@ -15,6 +15,10 @@ export interface User {
   smtp_port?: number | null;
   smtp_user?: string | null;
   smtp_from_name?: string | null;
+  email_signature?: string | null;
+  signature_template?: string;
+  signature_data?: Record<string, any> | null;
+  append_signature_default?: boolean;
 }
 
 const defaultUser: User = {
@@ -27,6 +31,8 @@ const defaultUser: User = {
   send_enabled: true,
   email_connected: false,
   email_plugin_type: null,
+  append_signature_default: true,
+  signature_template: 'modern',
 };
 
 interface AuthState {

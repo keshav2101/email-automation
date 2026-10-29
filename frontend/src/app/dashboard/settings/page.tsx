@@ -9,6 +9,7 @@ import {
   Zap, Key, Server, Lock, Send, RefreshCw, Check, Info, HelpCircle
 } from 'lucide-react';
 import { clsx } from 'clsx';
+import EmailSignatureCustomizer from '@/components/EmailSignatureCustomizer';
 
 export default function SettingsPage() {
   const { user, updateUser } = useAuthStore();
@@ -550,6 +551,9 @@ export default function SettingsPage() {
             )}
           </div>
         </div>
+
+        {/* EMAIL SIGNATURE STUDIO */}
+        <EmailSignatureCustomizer />
 
         {/* SENDING CONTROLS & THROTTLING */}
         <div className="card p-6 border border-surface-border bg-surface/90">

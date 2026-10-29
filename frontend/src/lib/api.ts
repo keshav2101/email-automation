@@ -46,6 +46,9 @@ export const authApi = {
 export const userApi = {
   getMe: () => api.get('/users/me').then((r) => r.data),
   updateMe: (data: object) => api.patch('/users/me', data).then((r) => r.data),
+  getSignature: () => api.get('/users/signature').then((r) => r.data),
+  saveSignature: (data: object) => api.post('/users/signature', data).then((r) => r.data),
+  previewSignature: (data: object) => api.post('/users/signature/preview', data).then((r) => r.data),
 };
 
 // --- Candidates ---

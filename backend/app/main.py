@@ -48,5 +48,23 @@ async def startup_event():
     try:
         base.Base.metadata.create_all(bind=engine)
         logger.info("Database tables initialized successfully")
+
+        # Safe dynamic column migrations for existing tables
+        from sqlalchemy import text
+        with engine.begin() as conn:
+            columns_to_add = [
+                ("users", "email_signature", "TEXT"),
+                ("users", "signature_template", "VARCHAR(50) DEFAULT 'modern'"),
+                ("users", "signature_data", "JSON"),
+                ("users", "append_signature_default", "BOOLEAN DEFAULT TRUE"),
+            ]
+            for table, col, col_type in columns_to_add:
+                try:
+                    if settings.DATABASE_URL.startswith("sqlite"):
+                        conn.execute(text(f"ALTER TABLE {table} ADD COLUMN {col} {col_type}"))
+                    else:
+                        conn.execute(text(f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS {col} {col_type}"))
+                except Exception:
+                    pass  # Column already exists
     except Exception as e:
         logger.error("Failed to initialize database tables", error=str(e))

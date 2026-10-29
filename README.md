@@ -95,6 +95,7 @@
 | ⚡ **5-Step Batch Outreach** | Upload sheet ➔ Auto-map columns ➔ Pre-validate duplicates & syntax ➔ Generate 100–150 word tailored emails ➔ Dispatch via Gmail. |
 | ✉️ **Gmail SMTP & Handshake** | Uses 16-character Google App Password with immediate real-time SMTP handshake verification. |
 | 🛡️ **Deliverability Controls** | Configurable inter-email throttle delays (5s, 10s, 30s), daily send quotas, and global suppression checking. |
+| ✍️ **Custom Email Signature Studio** | Interactive live signature designer with 5 templates (Modern, Corporate, Developer, Academic, Minimal), real-time preview, 1-click auto-fill from resume, and custom HTML. |
 | 🚀 **Direct Client Mode** | Instant access with zero auth wall or friction. |
 
 ---

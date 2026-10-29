@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import {
   Sparkles, Building2, User, Briefcase, RefreshCw,
   CheckCircle, Send, Eye, Edit3, AlertTriangle, FileText,
-  ChevronDown, ChevronUp, Copy, ThumbsUp,
+  ChevronDown, ChevronUp, Copy, ThumbsUp, PenTool,
 } from 'lucide-react';
-import { companyApi, contactApi, draftApi, researchApi } from '@/lib/api';
+import { companyApi, contactApi, draftApi, researchApi, userApi } from '@/lib/api';
+import { useAuthStore } from '@/lib/store';
 import toast from 'react-hot-toast';
 import { clsx } from 'clsx';
 
@@ -120,6 +121,21 @@ export default function StudioPage() {
       toast.error(err?.response?.data?.detail || 'Approval failed');
     } finally {
       setStepApproving(false);
+    }
+  };
+
+  const handleAppendSignature = async () => {
+    try {
+      const sig = await userApi.getSignature();
+      const text = sig?.signature_text;
+      if (text) {
+        setEditedBody((prev) => `${prev.trim()}\n\n--\n${text}`);
+        toast.success('Custom email signature attached!');
+      } else {
+        toast.error('No custom signature found. Configure in Settings!');
+      }
+    } catch {
+      toast.error('Failed to load signature');
     }
   };
 
@@ -446,12 +462,24 @@ export default function StudioPage() {
                       {v === 'main' ? form.style : v}
                     </button>
                   ))}
-                  <button
-                    onClick={() => { navigator.clipboard.writeText(editedBody); toast.success('Copied!'); }}
-                    className="ml-auto btn-secondary text-xs py-1.5 px-3"
-                  >
-                    <Copy className="w-3 h-3" /> Copy
-                  </button>
+                  <div className="ml-auto flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={handleAppendSignature}
+                      className="btn-secondary text-xs py-1.5 px-3 flex items-center gap-1.5 text-brand-300 hover:text-white border-brand-500/30"
+                      title="Attach your customized signature from settings"
+                    >
+                      <PenTool className="w-3 h-3 text-brand-400" />
+                      <span>+ Signature</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => { navigator.clipboard.writeText(editedBody); toast.success('Copied!'); }}
+                      className="btn-secondary text-xs py-1.5 px-3"
+                    >
+                      <Copy className="w-3 h-3" /> Copy
+                    </button>
+                  </div>
                 </div>
 
                 <label className="label">Email Body</label>

@@ -368,4 +368,64 @@ def test_document_upload_and_client_role():
     assert len(list_res.json()) >= 1
 
 
+def test_email_signature_customization():
+    """Test getting, previewing, and saving personalized email signatures."""
+    # 1. Preview signature
+    preview_resp = client.post(
+        "/api/v1/users/signature/preview",
+        json={
+            "template": "developer",
+            "greeting": "Best regards,",
+            "full_name": "Keshav Gupta",
+            "title": "AI/ML Engineer",
+            "university": "SRMIST",
+            "degree": "B.Tech CSE",
+            "email": "keshavg.connect@gmail.com",
+            "phone": "+91 9876543210",
+            "github_url": "https://github.com/keshav2101",
+            "linkedin_url": "https://linkedin.com/in/keshav2101",
+            "accent_color": "#10b981",
+            "include_disclaimer": True,
+        },
+    )
+    assert preview_resp.status_code == 200
+    prev_data = preview_resp.json()
+    assert "html" in prev_data
+    assert "text" in prev_data
+    assert "Keshav Gupta" in prev_data["html"]
+    assert "DEVELOPER" in prev_data["html"]
+    assert "SRMIST" in prev_data["text"]
+
+    # 2. Get signature (auto-populated defaults)
+    get_resp = client.get("/api/v1/users/signature")
+    assert get_resp.status_code == 200
+    sig_data = get_resp.json()
+    assert "template" in sig_data
+    assert "signature_data" in sig_data
+
+    # 3. Save signature
+    save_resp = client.post(
+        "/api/v1/users/signature",
+        json={
+            "template": "corporate",
+            "greeting": "Sincerely,",
+            "full_name": "Alex Candidate",
+            "title": "Lead Engineer",
+            "university": "SRMIST",
+            "degree": "B.Tech Computer Science",
+            "email": "alex@outreach.local",
+            "phone": "+1 555-0199",
+            "accent_color": "#3b82f6",
+            "include_disclaimer": False,
+            "append_default": True,
+        },
+    )
+    assert save_resp.status_code == 200
+    saved = save_resp.json()
+    assert saved["status"] == "success"
+    assert saved["template"] == "corporate"
+    assert "Alex Candidate" in saved["email_signature"]
+    assert saved["append_signature_default"] is True
+
+
 

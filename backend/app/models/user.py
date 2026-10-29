@@ -1,5 +1,5 @@
 from datetime import datetime
-from sqlalchemy import Column, Integer, String, DateTime, Boolean, Text
+from sqlalchemy import Column, Integer, String, DateTime, Boolean, Text, JSON
 from app.core.database import Base
 
 
@@ -30,6 +30,12 @@ class User(Base):
     smtp_from_name = Column(String(255), nullable=True)
     email_connected = Column(Boolean, default=False)
     email_connected_at = Column(DateTime, nullable=True)
+
+    # Email Signature Customization
+    email_signature = Column(Text, nullable=True)
+    signature_template = Column(String(50), default="modern")
+    signature_data = Column(JSON, default=dict)
+    append_signature_default = Column(Boolean, default=True)
 
     # Sending preferences
     daily_send_limit = Column(Integer, default=50)
