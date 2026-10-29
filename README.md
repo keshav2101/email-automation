@@ -11,12 +11,12 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
 <p align="center">
-  <b>Hyper-personalized cold email outreach powered by AI, deep resume intelligence, and zero-schema Excel/CSV data automation.</b>
+  <b>Production-ready cold email outreach platform unifying deep resume intelligence, universal Excel/CSV data extraction, and AI-driven 150-word outreach.</b>
   <br />
-  <a href="#-quick-start-local-development">⚡ Quick Start</a> •
+  <a href="#-real-application-showcase">📸 Real Screenshots</a> •
   <a href="#-deploy-to-vercel-in-30-seconds">🌐 Deploy to Vercel</a> •
-  <a href="#-interactive-walkthrough--visuals">🖼️ Visual Tour</a> •
-  <a href="#-5-step-batch-outreach-pipeline">📊 Excel Pipeline</a> •
+  <a href="#-key-features">🌟 Features</a> •
+  <a href="#-quick-start-local-development">⚡ Quick Start</a> •
   <a href="#-architecture">🏗️ Architecture</a>
 </p>
 
@@ -24,22 +24,60 @@
 
 ---
 
-## 🖼️ Interactive Walkthrough & Visuals
+## 📸 Real Application Showcase
 
-### 1. Unified HR CRM & Candidate Profile Intelligence
-> *Deep parsing extracts verified candidate education, GPA, research positions, 11 projects, and 4 peer-reviewed publications with DOIs as the single source of truth for email generation.*
+*Captured directly from the running production interface (`http://localhost:3000`).*
+
+### 1. Unified Dashboard & Live Sender Status
+> *Live overview showing system statistics, active candidate intelligence summary, quick actions, and verified Gmail connection status.*
 
 <div align="center">
-  <img src="docs/images/dashboard-preview.jpg" alt="HR Outreach AI Dashboard Preview" width="100%" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.4);" />
+  <img src="docs/images/dashboard-real.png" alt="Real Dashboard Overview" width="100%" style="border-radius: 8px; border: 1px solid #334155; margin-bottom: 24px;" />
 </div>
 
-<br />
+---
 
-### 2. Universal Excel/CSV Data Extractor & 5-Step Batch Pipeline
-> *Ingest any workbook without schema restrictions, auto-profile columns, pre-validate emails, and generate 100–150 word tailored cold outreach emails.*
+### 2. Candidate Profile & Deep Resume Parser
+> *Automatic extraction of candidate profile details (SRMIST, B.Tech CSE, GPA, Contact Info, LinkedIn, GitHub, and Scopus Author ID profile) with 1-click Re-Sync.*
 
 <div align="center">
-  <img src="docs/images/excel-pipeline-preview.jpg" alt="Excel Batch Automation Pipeline" width="100%" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.4);" />
+  <img src="docs/images/profile-real.png" alt="Real Candidate Profile Overview" width="100%" style="border-radius: 8px; border: 1px solid #334155; margin-bottom: 24px;" />
+</div>
+
+---
+
+### 3. Extracted Projects & Research Publications
+> *Comprehensive extraction showing 11 distinct software and AI/ML projects alongside peer-reviewed research publications with DOIs.*
+
+<div align="center">
+  <img src="docs/images/profile-projects-real.png" alt="Real Extracted Projects" width="100%" style="border-radius: 8px; border: 1px solid #334155; margin-bottom: 24px;" />
+</div>
+
+---
+
+### 4. 5-Step Excel/CSV Cold Email Batch Pipeline
+> *Streamlined workflow: Upload Spreadsheet ➔ Auto-map Columns ➔ Pre-validate Syntax & Duplicates ➔ Generate 100–150 Word Tailored Emails ➔ Dispatch with Rate Throttling.*
+
+<div align="center">
+  <img src="docs/images/excel-automation-real.png" alt="Real Excel Batch Automation Pipeline" width="100%" style="border-radius: 8px; border: 1px solid #334155; margin-bottom: 24px;" />
+</div>
+
+---
+
+### 5. Universal Excel & CSV Data Extractor
+> *Zero-schema ingestion supporting `.xlsx`, `.xls`, and `.csv` files. Inferred column semantic types (`Email`, `URL`, `Phone`, `Number`), fill-rate health metrics, and 1-click sync to CRM.*
+
+<div align="center">
+  <img src="docs/images/data-extractor-real.png" alt="Real Universal Excel Extractor" width="100%" style="border-radius: 8px; border: 1px solid #334155; margin-bottom: 24px;" />
+</div>
+
+---
+
+### 6. AI Cold Email Studio & Live Preview
+> *Generate tailored 100–150 word cold emails with tone selection, real-time live preview, and resume context injection.*
+
+<div align="center">
+  <img src="docs/images/studio-real.png" alt="Real AI Cold Email Studio" width="100%" style="border-radius: 8px; border: 1px solid #334155; margin-bottom: 24px;" />
 </div>
 
 ---
@@ -48,7 +86,7 @@
 
 | Capability | Description |
 |---|---|
-| 📄 **Deep Resume Parser** | Heuristic & AI extraction for University, Degree, Grad Year, GPA, Work Experience, Internships, Projects, Publications (with DOIs), Skills, and Awards. |
+| 📄 **Deep Resume Parser** | Structural section extraction for University, Degree, Grad Year, GPA, Work Experience, Internships, Projects, Publications (with DOIs), Skills, and Awards. |
 | 📊 **Universal Excel Extractor** | Parses `.xlsx`, `.xls`, `.csv` with zero schema restrictions. Auto-detects emails, URLs, roles, and provides live quality health metrics. |
 | ⚡ **5-Step Batch Outreach** | Upload sheet ➔ Auto-map columns ➔ Pre-validate duplicates & syntax ➔ Generate 100–150 word tailored emails ➔ Dispatch via Gmail. |
 | ✉️ **Gmail SMTP & Handshake** | Uses 16-character Google App Password with immediate real-time SMTP handshake verification. |
