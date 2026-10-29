@@ -1,0 +1,11 @@
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+*.db
+test_runner.db
+test_schema.db
+test_alembic.db
+uploads/*
