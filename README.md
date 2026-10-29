@@ -147,6 +147,20 @@ graph TD
 
 ---
 
+## 🌐 Deploy to Vercel in 30 Seconds
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkeshav2101%2Femail-automation&root-directory=frontend)
+
+Deploy the full Next.js 14 web client to Vercel with zero friction:
+
+1. Click the **Deploy with Vercel** button above or import `https://github.com/keshav2101/email-automation` in your Vercel Dashboard.
+2. In the project configuration, ensure the **Root Directory** is set to `frontend` (auto-configured by the button).
+3. **Framework Preset** automatically detects `Next.js`.
+4. *(Optional)* Add the environment variable `NEXT_PUBLIC_API_URL` pointing to your deployed FastAPI backend.
+5. Hit **Deploy** — your interactive AI outreach platform will be live globally!
+
+---
+
 ## ⚡ Quick Start (Local Development)
 
 ### 🐳 Option A: Docker Compose (Recommended)
