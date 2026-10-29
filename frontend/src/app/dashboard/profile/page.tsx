@@ -1,8 +1,9 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 import { candidateApi } from '@/lib/api';
 import toast from 'react-hot-toast';
-import { Upload, User, CheckCircle, AlertCircle, Loader2, X, RefreshCw, BookOpen, Award, Briefcase, Code, GraduationCap, ExternalLink } from 'lucide-react';
+import { Upload, User, CheckCircle, AlertCircle, Loader2, X, RefreshCw, BookOpen, Award, Briefcase, Code, GraduationCap, ExternalLink, PenTool } from 'lucide-react';
 import { useDropzone } from 'react-dropzone';
 import { clsx } from 'clsx';
 
@@ -157,6 +158,14 @@ export default function ProfilePage() {
           </p>
         </div>
         <div className="flex items-center gap-2">
+          <Link
+            href="/dashboard/signature"
+            className="btn-secondary flex items-center gap-1.5 text-xs text-brand-300 hover:text-white border-brand-500/30"
+            title="Design and customize your email signature"
+          >
+            <PenTool className="w-3.5 h-3.5 text-brand-400" />
+            <span>Customize Signature</span>
+          </Link>
           {resumes.length > 0 && (
             <button
               onClick={() => handleReparse()}

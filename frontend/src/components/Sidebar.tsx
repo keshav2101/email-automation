@@ -17,6 +17,7 @@ import {
   Mail,
   LogOut,
   Zap,
+  PenTool,
 } from 'lucide-react';
 import { useAuthStore } from '@/lib/store';
 import { clsx } from 'clsx';
@@ -30,6 +31,7 @@ const navItems = [
   { label: 'HR Contacts', href: '/dashboard/contacts', icon: Users },
   { label: 'Job Opportunities', href: '/dashboard/jobs', icon: Briefcase },
   { label: 'AI Email Studio', href: '/dashboard/studio', icon: Sparkles },
+  { label: 'Email Signature', href: '/dashboard/signature', icon: PenTool, isNew: true },
   { label: 'Campaigns', href: '/dashboard/campaigns', icon: Send },
   { label: 'Follow-Ups', href: '/dashboard/followups', icon: Clock },
   { label: 'Analytics', href: '/dashboard/analytics', icon: BarChart3 },
@@ -75,6 +77,9 @@ export default function Sidebar() {
               )}
               {label === 'AI Email Studio' && (
                 <span className="ml-auto badge badge-purple text-[10px] px-1.5 py-0">AI</span>
+              )}
+              {label === 'Email Signature' && (
+                <span className="ml-auto badge badge-green text-[10px] px-1.5 py-0 font-semibold">New</span>
               )}
             </Link>
           );

@@ -6,7 +6,8 @@ import toast from 'react-hot-toast';
 import {
   Settings, Mail, Shield, Bell,
   ExternalLink, CheckCircle, AlertCircle, Wifi, WifiOff,
-  Zap, Key, Server, Lock, Send, RefreshCw, Check, Info, HelpCircle
+  Zap, Key, Server, Lock, Send, RefreshCw, Check, Info, HelpCircle,
+  PenTool
 } from 'lucide-react';
 import { clsx } from 'clsx';
 import EmailSignatureCustomizer from '@/components/EmailSignatureCustomizer';
@@ -202,11 +203,37 @@ export default function SettingsPage() {
         <p className="text-gray-400 text-sm mt-1">
           Connect your sender mailbox through the Email Plugin, configure automated bulk sending, and manage safety controls.
         </p>
+
+        {/* Quick Jump Navigation Tabs */}
+        <div className="flex flex-wrap items-center gap-2 pt-3">
+          <a
+            href="#email-plugin"
+            className="px-3.5 py-1.5 rounded-xl text-xs font-semibold text-gray-300 bg-surface border border-surface-border hover:text-white hover:border-gray-500 transition-colors flex items-center gap-1.5"
+          >
+            <Mail className="w-3.5 h-3.5 text-brand-400" />
+            <span>1. Email Connection Plugin</span>
+          </a>
+          <a
+            href="#email-signature"
+            className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-brand-500/15 border border-brand-500/40 text-brand-300 hover:text-white transition-colors flex items-center gap-1.5"
+          >
+            <PenTool className="w-3.5 h-3.5 text-brand-400" />
+            <span>2. Email Signature Studio</span>
+            <span className="badge badge-green text-[9px] px-1 py-0">New</span>
+          </a>
+          <a
+            href="#sending-safeguards"
+            className="px-3.5 py-1.5 rounded-xl text-xs font-semibold text-gray-300 bg-surface border border-surface-border hover:text-white hover:border-gray-500 transition-colors flex items-center gap-1.5"
+          >
+            <Shield className="w-3.5 h-3.5 text-brand-400" />
+            <span>3. Sending Safeguards</span>
+          </a>
+        </div>
       </div>
 
       <div className="space-y-6">
         {/* EMAIL PLUGIN CONNECTION HUB */}
-        <div className="card p-6 border border-surface-border bg-surface/90 shadow-xl shadow-brand-500/5">
+        <div id="email-plugin" className="card p-6 border border-surface-border bg-surface/90 shadow-xl shadow-brand-500/5">
           <div className="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-surface-border">
             <div className="flex items-center gap-3">
               <div className="p-2.5 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 text-white shadow-md shadow-brand-500/20">
@@ -553,10 +580,12 @@ export default function SettingsPage() {
         </div>
 
         {/* EMAIL SIGNATURE STUDIO */}
-        <EmailSignatureCustomizer />
+        <div id="email-signature">
+          <EmailSignatureCustomizer />
+        </div>
 
         {/* SENDING CONTROLS & THROTTLING */}
-        <div className="card p-6 border border-surface-border bg-surface/90">
+        <div id="sending-safeguards" className="card p-6 border border-surface-border bg-surface/90">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 rounded-lg bg-brand-500/15">
               <Shield className="w-5 h-5 text-brand-400" />
