@@ -2,6 +2,8 @@
 
 <div align="center">
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-emailauto.vercel.app-0070F3?style=for-the-badge&logo=vercel&logoColor=white)](https://emailauto.vercel.app)
+[![Deployment Status](https://img.shields.io/badge/Vercel-Deployed_Live-brightgreen?style=for-the-badge&logo=vercel)](https://emailauto.vercel.app)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkeshav2101%2Femail-automation&root-directory=frontend)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
@@ -12,9 +14,11 @@
 
 <p align="center">
   <b>Production-ready cold email outreach platform unifying deep resume intelligence, universal Excel/CSV data extraction, and AI-driven 150-word outreach.</b>
-  <br />
+  <br /><br />
+  <a href="https://emailauto.vercel.app"><b>🌐 Launch Live App: emailauto.vercel.app</b></a>
+  <br /><br />
   <a href="#-real-application-showcase">📸 Real Screenshots</a> •
-  <a href="#-deploy-to-vercel-in-30-seconds">🌐 Deploy to Vercel</a> •
+  <a href="#-live-deployment--deploy-to-vercel">🌐 Live Deployment</a> •
   <a href="#-key-features">🌟 Features</a> •
   <a href="#-quick-start-local-development">⚡ Quick Start</a> •
   <a href="#-architecture">🏗️ Architecture</a>
@@ -147,14 +151,18 @@ graph TD
 
 ---
 
-## 🌐 Deploy to Vercel in 30 Seconds
+## 🌐 Live Deployment & Deploy to Vercel
+
+### ⚡ Active Live Production URL
+The frontend application is deployed and running live globally on Vercel:
+> **🔗 Live App:** [https://emailauto.vercel.app](https://emailauto.vercel.app)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkeshav2101%2Femail-automation&root-directory=frontend)
 
-Deploy the full Next.js 14 web client to Vercel with zero friction:
+Deploy your own instance of the Next.js 14 web client to Vercel in seconds:
 
 1. Click the **Deploy with Vercel** button above or import `https://github.com/keshav2101/email-automation` in your Vercel Dashboard.
-2. In the project configuration, ensure the **Root Directory** is set to `frontend` (auto-configured by the button).
+2. In the project configuration, ensure the **Root Directory** is set to `frontend` (auto-configured by the 1-click button).
 3. **Framework Preset** automatically detects `Next.js`.
 4. *(Optional)* Add the environment variable `NEXT_PUBLIC_API_URL` pointing to your deployed FastAPI backend.
 5. Hit **Deploy** — your interactive AI outreach platform will be live globally!
